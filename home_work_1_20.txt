@@ -1,0 +1,86 @@
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка
+$ pwd
+/d/QA Engineering/Ksendzov/Домашка
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка
+$ mkdir DZ1
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка
+$ cd DZ1
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ mkdir dz1 dz2 dz3
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ cd dz1
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz1
+$ touch d1.txt d2.txt d3.txt d4.json d5.json
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz1
+$ mkdir d_1 d_2 d_3
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz1
+$ ls -la
+total 4
+drwxr-xr-x 1 Jerry 197121 0 Jun 30 14:12 ./
+drwxr-xr-x 1 Jerry 197121 0 Jun 30 14:09 ../
+-rw-r--r-- 1 Jerry 197121 0 Jun 30 14:11 d1.txt
+-rw-r--r-- 1 Jerry 197121 0 Jun 30 14:11 d2.txt
+-rw-r--r-- 1 Jerry 197121 0 Jun 30 14:11 d3.txt
+-rw-r--r-- 1 Jerry 197121 0 Jun 30 14:11 d4.json
+-rw-r--r-- 1 Jerry 197121 0 Jun 30 14:11 d5.json
+drwxr-xr-x 1 Jerry 197121 0 Jun 30 14:12 d_1/
+drwxr-xr-x 1 Jerry 197121 0 Jun 30 14:12 d_2/
+drwxr-xr-x 1 Jerry 197121 0 Jun 30 14:12 d_3/
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz1
+$ vim d1.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz1
+$ cd ..
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ mv dz1/d1.txt dz2/d1.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ mv dz1/d2.txt dz2/d2.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ cp dz2/d1.txt dz3/d1.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ cp dz2/d2.txt dz3/d2.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1
+$ find -name d3.txt
+./dz1/d3.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ cat d1.txt
+Belarus
+Freedom
+Freedom
+Belarus
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ cat d1.txt | grep Belarus
+Belarus
+Belarus
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ cat d1.txt | sed -n 1,2p
+Belarus
+Freedom
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ cat d1.txt | sed -n 3,4p
+Freedom
+Belarus
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ less d1.txt
+
+Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
+$ date
+Thu Jul  1 15:33:29     2021
