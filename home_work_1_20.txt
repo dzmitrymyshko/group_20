@@ -57,16 +57,8 @@ $ find -name d3.txt
 ./dz1/d3.txt
 
 Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
-$ cat d1.txt
-Belarus
-Freedom
-Freedom
-Belarus
-
-Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
-$ cat d1.txt | grep Belarus
-Belarus
-Belarus
+$ tail -f d2.txt
+Long live Belarus
 
 Jerry@DESKTOP-NC1CHEE MINGW64 /d/QA Engineering/Ksendzov/Домашка/DZ1/dz2
 $ cat d1.txt | sed -n 1,2p
