@@ -1,0 +1,18 @@
+ID
+
+Summary
+
+Steps To Reproduce
+
+Actual Result
+
+Expected Result
+
+Environment
+
+Severity
+
+Priority
+
+Attachments
+
