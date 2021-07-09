@@ -238,7 +238,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "EP_7",
 			"request": {
 				"method": "POST",
 				"header": [],
