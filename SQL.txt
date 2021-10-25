@@ -1,0 +1,76 @@
+Задачи выполнены на сайте: https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
+
+1. Отобразите в результате всех поставщиков, которые находятся в городе с именем, начинающимся на "S", но не в стране начинающейся на "S".
+
+SELECT SupplierName FROM Suppliers
+WHERE City LIKE 'S%' 
+AND NOT Country LIKE 'S%'
+
+2. Вывести в алфавитном порядке все города из базы находящиеся не в Германии не во Франции и не в Англии.
+
+SELECT City FROM Suppliers
+WHERE Country != 'UK' AND Country !='Germany' AND Country !='France'
+ORDER BY City
+
+3. Выберите информацию о сотрудниках в алфавитном порядке по Фамилии и Имени, которые имеют степень бакалавра гуманитарных наук.
+
+SELECT LastName, FirstName FROM Employees
+WHERE Notes LIKE '%BA%' AND NOT Notes LIKE '%MBA%'
+ORDER BY LastName, FirstName
+
+4. Вставить запись о новом клиенте двумя способами:
+  a. Указать уникальный идентификатор в запросе
+
+INSERT INTO Customers 
+VALUES ('92', 'Alma Studio', 'Alexey Ivasenko', 'Nezavisimosti 58/6', 'Minsk', '200005', 'Belarus')
+
+  b. Не указывать явно уникальный идентификатор в запросе, идентификатор должен генерироваться автоматически.
+
+INSERT INTO Customers ('CustomerName', 'ContactName', 'Address', 'City', 'PostalCode', 'Country')
+VALUES ('MOKO', 'Ivan Anischenko', 'P.Mstislavtsa, 3', 'Minsk', '220114', 'Belarus')
+
+5. Сделать апдейт любой записи в базе.
+
+UPDATE Categories
+SET CategoryName = 'Dairy Products', Description = 'Cheeses, Milk, Cottage cheese'
+WHERE CategoryID = 4
+
+6. Сделать удаление записи из любой таблицы.
+
+DELETE FROM OrderDetails
+WHERE OrderDetailID = 21
+
+7. Вывести имена всех людей, которые покупали морские продукты.
+
+SELECT ContactName FROM OrderDetails 
+JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
+JOIN Products ON Products.ProductID=OrderDetails.ProductID
+JOIN Customers ON Customers.CustomerID=Orders.CustomerID
+WHERE CategoryID = 8
+
+8. Вывести имя клиента и количество совершенных им покупок.
+
+SELECT Quantity, ContactName FROM OrderDetails
+JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+
+9. Вывести имена и ID пяти самых покупаемых продуктов. А также сколько их было продано.
+
+SELECT OrderDetails.Quantity, Products.ProductID, Products.ProductName FROM OrderDetails 
+JOIN Products ON OrderDetails.ProductID=Products.ProductID 
+ORDER BY OrderDetails.Quantity DESC LIMIT 5 
+
+10. Покажите сколько заказов было сделано каждым грузоотправителем. Отобразите имена грузоотправителей и количество выполненных ими заказов.
+
+SELECT COUNT(OrderID), ShipperName FROM Orders
+JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName
+
+11. Получитe имена клиентов и средний чек заказов, сумма которого составляет от 1000 долларов(включительно). Среднюю сумму заказа необходимо округлить до двух сотых.
+
+SELECT Customers.CustomerName, ROUND(AVG(Products.Price*OrderDetails.Quantity),2) AS Sum FROM OrderDetails
+JOIN Products ON OrderDetails.ProductID=Products.ProductID 
+JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY CustomerName
+HAVING SUM >= 1000
